@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SAE上部署WordPress | JoeyGoo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="已经搬到hexo这边来了，简单总结下在sae上搭的wordpress的小流程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SAE上部署WordPress">
+<meta property="og:url" content="http://joeygoo.github.io/2015/01/18/SAE上部署WordPress/">
+<meta property="og:site_name" content="JoeyGoo">
+<meta property="og:description" content="已经搬到hexo这边来了，简单总结下在sae上搭的wordpress的小流程">
+<meta property="og:image" content="http://7u2m4u.com1.z0.glb.clouddn.com/duo.png">
+<meta property="og:image" content="http://7u2m4u.com1.z0.glb.clouddn.com/2.png">
+<meta property="og:image" content="http://7u2m4u.com1.z0.glb.clouddn.com/3.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SAE上部署WordPress">
+<meta name="twitter:description" content="已经搬到hexo这边来了，简单总结下在sae上搭的wordpress的小流程">
+
+  
+    <link rel="alternative" href="/atom.xml" title="JoeyGoo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars0.githubusercontent.com/u/10445611?v=3&amp;amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">JoeyGoo</a></h1>
+		  
+		  <h2 class="author-intr"><span class="intr-block"></span><a href="/">思考，探索</a></h2>
+		  
+		</hgroup>
+		<div class="left-line"></div>
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+			
+				
+				
+				<section class="switch-part switch-part1">
+					<div class="widget tagcloud">
+
+					 <a href="/">HOME</a>
+ 					 <a href="/archives">ALL<sup>7</sup></a>
+ 					 
+						<a href="/categories/Theme/" title="Theme">Theme<sup>1</sup></a>
+					
+						<div class="true-tagcloud">	
+						<a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/tags/MAC/" style="font-size: 20.00px;">MAC</a><a href="/tags/MarkDown/" style="font-size: 10.00px;">MarkDown</a><a href="/tags/WordPress/" style="font-size: 10.00px;">WordPress</a><a href="/tags/window/" style="font-size: 10.00px;">window</a>
+						</div>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars0.githubusercontent.com/u/10445611?v=3&amp;amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">JoeyGoo</a></h1>
+		  	  
+			  <h2 class="author-intr"><span class="intr-block"></span><a href="/">思考，探索</a></h2>
+		 	 
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					 <a href="/">HOME</a>
+ 					 <a href="/archives">ALL<sup>7</sup></a>
+ 					  
+						<a href="/categories/Theme/" title="Theme">Theme<sup>1</sup></a>
+					
+					<div class="true-tagcloud">	
+					<a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/tags/MAC/" style="font-size: 20.00px;">MAC</a><a href="/tags/MarkDown/" style="font-size: 10.00px;">MarkDown</a><a href="/tags/WordPress/" style="font-size: 10.00px;">WordPress</a><a href="/tags/window/" style="font-size: 10.00px;">window</a>
+					</div>
+				
+				</ul>
+			</nav>
+			
+
+				
+		</header>				
+	</div>
+</nav>
+      <nav class="layout-menu">
+ 
+</nav>
+
+      <article id="post-SAE上部署WordPress" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/01/18/SAE上部署WordPress/" class="article-date">
+  	<time datetime="2015-01-18T06:44:24.000Z" itemprop="datePublished">2015-01-18</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Theme/">Theme</a>
+  </div>
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WordPress/">WordPress</a></li></ul>
+
+
+      
+      <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#在SAE上创建仓库"><span class="toc-number">1.</span> <span class="toc-text">在SAE上创建仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结合SVN更新主题"><span class="toc-number">2.</span> <span class="toc-text">结合SVN更新主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结束语"><span class="toc-number">3.</span> <span class="toc-text">结束语</span></a></li></ol>
+      </div>
+      
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SAE上部署WordPress
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>已经搬到hexo这边来了，简单总结下在sae上搭的wordpress的小流程<a id="more"></a></p>
+<h2 id="在SAE上创建仓库">在SAE上创建仓库</h2>
+<ol>
+<li><p>在sae上（底部）选中“应用仓库”</p>
+</li>
+<li><p>选中Wordpress并选择“安装应用”（默认在线安装），或下载应用后再上传（或许鸡肋了）</p>
+</li>
+<li><p>按提示一步一步走…</p>
+</li>
+</ol>
+<h2 id="结合SVN更新主题">结合SVN更新主题</h2>
+<p>由于SAE不支持本地代码目录写入，故无法支持在线安装主题、插件，在线编辑主题、插件功能。当然，这并不意味着我们不能修改上传或更新主题，别急，接下我将以TortoiseSVN为例来讲解（<a href="http://baike.baidu.com/view/183128.htm?fr=aladdin" target="_blank" rel="external">SVN介绍</a>）</p>
+<ol>
+<li><p>下载并安装<a href="http://tortoisesvn.net/downloads.html" target="_blank" rel="external">TortoiseSVN</a></p>
+</li>
+<li><p>安装好后，在桌面上右击，看到<img src="http://7u2m4u.com1.z0.glb.clouddn.com/duo.png" alt="youji"></p>
+</li>
+<li><p>新建一个文件夹（存放SVN同步的数据，如：wp）</p>
+</li>
+<li><p>进入刚新建的文件夹，点右键（看到SVN的各功能菜单）</p>
+</li>
+<li><p>点击SVN checkout从SAE的SVN仓库检出代码，如图<img src="http://7u2m4u.com1.z0.glb.clouddn.com/2.png" alt="checkout"></p>
+</li>
+</ol>
+<p>图中URL od repository为对应应用的仓库路径（在sae应用的“代码管理底部有显示‘SVN仓库地址’”），一般为<a href="https://svn.sinaapp.com/“你的应用名称”/" target="_blank" rel="external">https://svn.sinaapp.com/“你的应用名称”/</a></p>
+<p><strong>输入安全邮箱及密码</strong><br>在点击ok后，会弹出要求账号密码的框，如下<img src="http://7u2m4u.com1.z0.glb.clouddn.com/3.png" alt="账号密码"></p>
+<p><strong>注：</strong></p>
+<ul>
+<li>Usename填的是sae的安全邮箱</li>
+<li>Password填的是sae的安全密码</li>
+</ul>
+<h2 id="结束语">结束语</h2>
+<p>关于svn的操作也不少，Commit，Update，拉取分支，合并主干 等等。</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/18/markDown/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          MarkDown 简单用法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/18/hexo发布文章/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">有关Hexo</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="SAE上部署WordPress" data-title="SAE上部署WordPress" data-url="http://joeygoo.github.io/2015/01/18/SAE上部署WordPress/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"joeygoo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-right">
+    		&copy; 2015 JoeyGoo
+    	</div>
+      	
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
