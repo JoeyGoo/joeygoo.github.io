@@ -163,6 +163,10 @@
 <li><p>$ hexo deploy 发布到github</p>
 </li>
 </ol>
+<p><strong>附：</strong></p>
+<ul>
+<li>$ hexo clean 清除generate生成的public文件，当某篇文章使用了新的categories，而后来删除了该文章，且没有categories的文章了，此时需要进行clean，否则categories仍然存在</li>
+</ul>
 <h2 id="Empty_reply_from_server">Empty reply from server</h2>
 <p>当使用hexo deploy时，实际调用的是git指令去push到github(或其他仓库上)，今天执行hexo deploy时出现了标题中的错误,如下</p>
 <blockquote>
@@ -177,14 +181,11 @@
 <li><p>在hexo项目中，改变通道(HTTPS/SSH)方式需在项目的根目录的_config.yml文件中 改变deplay下的repo地址(对应github上的项目地址)</p>
 </li>
 </ol>
-<p><em>附：</em></p>
+<p><strong>附：</strong></p>
 <ul>
-<li>正常的<a href="https://help.github.com/articles/changing-a-remote-s-url/" target="_blank" rel="external">改变remote‘s url方法</a>则是通过git指令来完成的。</li>
+<li><a href="https://help.github.com/articles/changing-a-remote-s-url/" target="_blank" rel="external">改变remote‘s url方法</a></li>
 </ul>
 <h2 id="未完-">未完..</h2>
-<ol>
-<li>$ hexo clean 清除</li>
-</ol>
 
       
     </div>
