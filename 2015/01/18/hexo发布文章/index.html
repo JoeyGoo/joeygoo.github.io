@@ -55,12 +55,12 @@
 					<div class="widget tagcloud">
 
 					 <a href="/">HOME</a>
- 					 <a href="/archives">ALL<sup>7</sup></a>
+ 					 <a href="/archives">ALL<sup>6</sup></a>
  					 
 						<a href="/categories/Theme/" title="Theme">Theme<sup>1</sup></a>
 					
 						<div class="true-tagcloud">	
-						<a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/tags/MAC/" style="font-size: 20.00px;">MAC</a><a href="/tags/MarkDown/" style="font-size: 10.00px;">MarkDown</a><a href="/tags/WordPress/" style="font-size: 10.00px;">WordPress</a><a href="/tags/window/" style="font-size: 10.00px;">window</a>
+						<a href="/tags/Git/" style="font-size: NaNpx;">Git</a><a href="/tags/Hexo/" style="font-size: NaNpx;">Hexo</a><a href="/tags/MAC/" style="font-size: NaNpx;">MAC</a><a href="/tags/MarkDown/" style="font-size: NaNpx;">MarkDown</a><a href="/tags/WordPress/" style="font-size: NaNpx;">WordPress</a><a href="/tags/window/" style="font-size: NaNpx;">window</a>
 						</div>
 					</div>
 				</section>
@@ -94,12 +94,12 @@
 				<ul>
 				
 					 <a href="/">HOME</a>
- 					 <a href="/archives">ALL<sup>7</sup></a>
+ 					 <a href="/archives">ALL<sup>6</sup></a>
  					  
 						<a href="/categories/Theme/" title="Theme">Theme<sup>1</sup></a>
 					
 					<div class="true-tagcloud">	
-					<a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/tags/MAC/" style="font-size: 20.00px;">MAC</a><a href="/tags/MarkDown/" style="font-size: 10.00px;">MarkDown</a><a href="/tags/WordPress/" style="font-size: 10.00px;">WordPress</a><a href="/tags/window/" style="font-size: 10.00px;">window</a>
+					<a href="/tags/Git/" style="font-size: NaNpx;">Git</a><a href="/tags/Hexo/" style="font-size: NaNpx;">Hexo</a><a href="/tags/MAC/" style="font-size: NaNpx;">MAC</a><a href="/tags/MarkDown/" style="font-size: NaNpx;">MarkDown</a><a href="/tags/WordPress/" style="font-size: NaNpx;">WordPress</a><a href="/tags/window/" style="font-size: NaNpx;">window</a>
 					</div>
 				
 				</ul>
@@ -169,6 +169,7 @@
 <p>fatal: unable to access ‘<a href="https://github.com/JoeyGoo/joeygoo.github.io.git" target="_blank" rel="external">https://github.com/JoeyGoo/joeygoo.github.io.git</a>‘: Empty reply from server;</p>
 </blockquote>
 <p>后来查明原因，发现是github上HTTPS通道被墙的原因，访问失败，改成SSH后就可以了，点击查看<a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">如何配置SSH通道</a></p>
+<p>在hexo中，改变通道(HTTPS/SSH)只需在你的根目录的_config.yml中改变deplay下的repo路径即可，正常的<a href="https://help.github.com/articles/changing-a-remote-s-url/" target="_blank" rel="external">改变remote‘s url方法</a>则是通过git指令来完成的。</p>
 <h2 id="未完-">未完..</h2>
 <ol>
 <li>$ hexo clean 清除</li>
