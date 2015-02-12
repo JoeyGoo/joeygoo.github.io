@@ -3,20 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>SAE上部署WordPress | JoeyGoo</title>
+  <title>About AE | JoeyGoo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="已经搬到hexo这边来了，简单总结下在sae上搭的wordpress的小流程">
+  <meta name="description" content="记录有关AE的东西..">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SAE上部署WordPress">
-<meta property="og:url" content="http://joeygoo.github.io/2015/01/18/SAE上部署WordPress/">
+<meta property="og:title" content="About AE">
+<meta property="og:url" content="http://joeygoo.github.io/2015/02/12/AE/">
 <meta property="og:site_name" content="JoeyGoo">
-<meta property="og:description" content="已经搬到hexo这边来了，简单总结下在sae上搭的wordpress的小流程">
-<meta property="og:image" content="http://7u2m4u.com1.z0.glb.clouddn.com/duo.png">
-<meta property="og:image" content="http://7u2m4u.com1.z0.glb.clouddn.com/2.png">
-<meta property="og:image" content="http://7u2m4u.com1.z0.glb.clouddn.com/3.png">
+<meta property="og:description" content="记录有关AE的东西..">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SAE上部署WordPress">
-<meta name="twitter:description" content="已经搬到hexo这边来了，简单总结下在sae上搭的wordpress的小流程">
+<meta name="twitter:title" content="About AE">
+<meta name="twitter:description" content="记录有关AE的东西..">
 
   
     <link rel="alternative" href="/atom.xml" title="JoeyGoo" type="application/atom+xml">
@@ -117,25 +114,21 @@
  
 </nav>
 
-      <article id="post-SAE上部署WordPress" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-AE" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/01/18/SAE上部署WordPress/" class="article-date">
-  	<time datetime="2015-01-18T06:44:24.000Z" itemprop="datePublished">2015-01-18</time>
+      <a href="/2015/02/12/AE/" class="article-date">
+  	<time datetime="2015-02-12T09:30:00.000Z" itemprop="datePublished">2015-02-12</time>
 </a>
       
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Theme/">Theme</a>
-  </div>
-
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WordPress/">WordPress</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AE/">AE</a></li></ul>
 
 
       
       <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#在SAE上创建仓库"><span class="toc-number">1.</span> <span class="toc-text">在SAE上创建仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结合SVN更新主题"><span class="toc-number">2.</span> <span class="toc-text">结合SVN更新主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结束语"><span class="toc-number">3.</span> <span class="toc-text">结束语</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#gif导入到AE中出现白色背景"><span class="toc-number">1.</span> <span class="toc-text">gif导入到AE中出现白色背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#屏蔽掉视频中多余的部分（将视频大小固定在固定区域上）"><span class="toc-number">2.</span> <span class="toc-text">屏蔽掉视频中多余的部分（将视频大小固定在固定区域上）</span></a></li></ol>
       </div>
       
       
@@ -150,7 +143,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      SAE上部署WordPress
+      About AE
     </h1>
   
 
@@ -158,39 +151,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>已经搬到hexo这边来了，简单总结下在sae上搭的wordpress的小流程<a id="more"></a></p>
-<h2 id="在SAE上创建仓库">在SAE上创建仓库</h2>
-<ol>
-<li><p>在sae上（底部）选中“应用仓库”</p>
-</li>
-<li><p>选中Wordpress并选择“安装应用”（默认在线安装），或下载应用后再上传（或许鸡肋了）</p>
-</li>
-<li><p>按提示一步一步走…</p>
-</li>
-</ol>
-<h2 id="结合SVN更新主题">结合SVN更新主题</h2>
-<p>由于SAE不支持本地代码目录写入，故无法支持在线安装主题、插件，在线编辑主题、插件功能。当然，这并不意味着我们不能修改上传或更新主题，别急，接下我将以TortoiseSVN为例来讲解（<a href="http://baike.baidu.com/view/183128.htm?fr=aladdin" target="_blank" rel="external">SVN介绍</a>）</p>
-<ol>
-<li><p>下载并安装<a href="http://tortoisesvn.net/downloads.html" target="_blank" rel="external">TortoiseSVN</a></p>
-</li>
-<li><p>安装好后，在桌面上右击，看到<img src="http://7u2m4u.com1.z0.glb.clouddn.com/duo.png" alt="youji"></p>
-</li>
-<li><p>新建一个文件夹（存放SVN同步的数据，如：wp）</p>
-</li>
-<li><p>进入刚新建的文件夹，点右键（看到SVN的各功能菜单）</p>
-</li>
-<li><p>点击SVN checkout从SAE的SVN仓库检出代码，如图<img src="http://7u2m4u.com1.z0.glb.clouddn.com/2.png" alt="checkout"></p>
-</li>
-</ol>
-<p>图中URL od repository为对应应用的仓库路径（在sae应用的“代码管理底部有显示‘SVN仓库地址’”），一般为<a href="https://svn.sinaapp.com/“你的应用名称”/" target="_blank" rel="external">https://svn.sinaapp.com/“你的应用名称”/</a></p>
-<p><strong>输入安全邮箱及密码</strong><br>在点击ok后，会弹出要求账号密码的框，如下<img src="http://7u2m4u.com1.z0.glb.clouddn.com/3.png" alt="账号密码"></p>
-<p><strong>注：</strong></p>
-<ul>
-<li>Usename填的是sae的安全邮箱</li>
-<li>Password填的是sae的安全密码</li>
-</ul>
-<h2 id="结束语">结束语</h2>
-<p>关于svn的操作也不少，Commit，Update，拉取分支，合并主干 等等。</p>
+        <p>记录有关AE的东西..<a id="more"></a></p>
+<h2 id="gif导入到AE中出现白色背景">gif导入到AE中出现白色背景</h2>
+<p>在“效果和预置” -&gt; “键控” -&gt; “提取（抽出）” -&gt;将“白色部分”从255调至254（其他保持默认0） -&gt; done</p>
+<h2 id="屏蔽掉视频中多余的部分（将视频大小固定在固定区域上）">屏蔽掉视频中多余的部分（将视频大小固定在固定区域上）</h2>
+<p>将该视频放入一个合成中，调整视频的大小，将需要屏蔽的部分置于合成之外。</p>
 
       
     </div>
@@ -199,18 +164,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/01/18/markDown/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
-        
-          MarkDown 简单用法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/01/18/hexo发布文章/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">有关Hexo</div>
+    <a href="/2015/02/10/gulp/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">About gulp</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
@@ -239,7 +195,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="SAE上部署WordPress" data-title="SAE上部署WordPress" data-url="http://joeygoo.github.io/2015/01/18/SAE上部署WordPress/"></div>
+	<div class="ds-thread" data-thread-key="AE" data-title="About AE" data-url="http://joeygoo.github.io/2015/02/12/AE/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
