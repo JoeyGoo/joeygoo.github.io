@@ -1,0 +1,346 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>收集平时所用到的Util | JoeyGoo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="JoeyGoo">
+    
+    <meta name="description" content="收集平时所用到的Util">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/logo.jpeg">
+    
+    
+    <link rel="apple-touch-icon" href="/img/logo.jpeg">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.jpeg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+	<div style="overflow:hidden">
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.jpeg" alt="JoeyGoo" title="JoeyGoo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="JoeyGoo">JoeyGoo</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:joeygoo.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<p class="header-title">「Stay hungry. Stay foolish.」</p>			
+</div>
+
+    </header>
+    <div id="container" >
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/08/08/Util/" title="收集平时所用到的Util" itemprop="url">收集平时所用到的Util</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://joeygoo.github.io" title="JoeyGoo">JoeyGoo</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-08-08T06:44:24.000Z" itemprop="datePublished">2015-08-08</time>
+    Updated:<time datetime="2015-08-08T15:14:34.000Z" itemprop="dateModified">2015-08-08</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取指定cookie"><span class="toc-number">1.</span> <span class="toc-text">获取指定cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时间戳_转为_xxxx-xx-xx_xx:xx:xx"><span class="toc-number">2.</span> <span class="toc-text">时间戳 转为 xxxx-xx-xx xx:xx:xx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取url上的参数"><span class="toc-number">3.</span> <span class="toc-text">获取url上的参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过a标签来解析url"><span class="toc-number">4.</span> <span class="toc-text">通过a标签来解析url</span></a></li></ol>
+		</div>
+		
+		<p>收集平时所用到的Util<a id="more"></a></p>
+<h3 id="获取指定cookie">获取指定cookie</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span><span class="params">(name)</span> </span>{</div><div class="line">    <span class="keyword">var</span> r = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(?:^|;+|\\s+)"</span> + name + <span class="string">"=([^;]*)"</span>);</div><div class="line">    <span class="keyword">var</span> m = <span class="built_in">window</span>.document.cookie.match(r);</div><div class="line">    <span class="keyword">return</span> (!m ? <span class="string">""</span> : m[<span class="number">1</span>]);</div><div class="line">};</div></pre></td></tr></table></figure>
+
+
+
+<h3 id="时间戳_转为_xxxx-xx-xx_xx:xx:xx">时间戳 转为 xxxx-xx-xx xx:xx:xx</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRealDate</span><span class="params">(timestamp)</span> </span>{</div><div class="line">    Y = date.getFullYear() + <span class="string">'-'</span>;</div><div class="line">    M = (date.getMonth()+<span class="number">1</span> &lt; <span class="number">10</span> ? <span class="string">'0'</span>+(date.getMonth()+<span class="number">1</span>) : date.getMonth()+<span class="number">1</span>) + <span class="string">'-'</span>;</div><div class="line">    D = date.getDate() + <span class="string">' '</span>;</div><div class="line">    h = date.getHours() + <span class="string">':'</span>;</div><div class="line">    m = date.getMinutes() + <span class="string">':'</span>;</div><div class="line">    s = date.getSeconds(); </div><div class="line">    <span class="keyword">return</span> Y+M+D+h+m+s;   <span class="comment">//xxxx-xx-xx xx:xx:xx</span></div><div class="line">};</div></pre></td></tr></table></figure>
+
+
+
+<h3 id="获取url上的参数">获取url上的参数</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUrlParam</span> <span class="params">(name)</span> </span>{ </div><div class="line">    <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(^|&|\\?)"</span>+ name +<span class="string">"=([^&]*)(&|$)"</span>),</div><div class="line">        r; </div><div class="line">    <span class="keyword">if</span> (r=<span class="built_in">window</span>.location.href.match(reg)){</div><div class="line">        <span class="keyword">return</span> <span class="built_in">unescape</span>(r[<span class="number">2</span>]);</div><div class="line">    } </div><div class="line">    <span class="keyword">return</span> <span class="literal">null</span>; </div><div class="line">};</div></pre></td></tr></table></figure>
+
+<h3 id="通过a标签来解析url">通过a标签来解析url</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseURL</span><span class="params">(url)</span> </span>{</div><div class="line">    <span class="keyword">var</span> a =  <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</div><div class="line">    a.href = url;</div><div class="line">    <span class="keyword">return</span> {</div><div class="line">        source: url,</div><div class="line">        protocol: a.protocol.replace(<span class="string">':'</span>,<span class="string">''</span>),</div><div class="line">        host: a.hostname,</div><div class="line">        port: a.port,</div><div class="line">        query: a.search,</div><div class="line">        params: (<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">            <span class="keyword">var</span> ret = {},</div><div class="line">                seg = a.search.replace(<span class="regexp">/^\?/</span>,<span class="string">''</span>).split(<span class="string">'&'</span>),</div><div class="line">                len = seg.length, i = <span class="number">0</span>, s;</div><div class="line">            <span class="keyword">for</span> (;i&lt;len;i++) {</div><div class="line">                <span class="keyword">if</span> (!seg[i]) { <span class="keyword">continue</span>; }</div><div class="line">                s = seg[i].split(<span class="string">'='</span>);</div><div class="line">                ret[s[<span class="number">0</span>]] = s[<span class="number">1</span>];</div><div class="line">            }</div><div class="line">            <span class="keyword">return</span> ret;</div><div class="line">        })(),</div><div class="line">        file: (a.pathname.match(<span class="regexp">/\/([^\/?#]+)$/i</span>) || [,<span class="string">''</span>])[<span class="number">1</span>],</div><div class="line">        hash: a.hash.replace(<span class="string">'#'</span>,<span class="string">''</span>),</div><div class="line">        path: a.pathname.replace(<span class="regexp">/^([^\/])/</span>,<span class="string">'/$1'</span>),</div><div class="line">        relative: (a.href.match(<span class="regexp">/tps?:\/\/[^\/]+(.+)/</span>) || [,<span class="string">''</span>])[<span class="number">1</span>],</div><div class="line">        segments: a.pathname.replace(<span class="regexp">/^\//</span>,<span class="string">''</span>).split(<span class="string">'/'</span>)</div><div class="line">    };</div><div class="line">}</div></pre></td></tr></table></figure>
+
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Code/">Code</a>
+  </div>
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://joeygoo.github.io/2015/08/08/Util/" data-title="收集平时所用到的Util | JoeyGoo" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/08/08/Git简单常用方法/" title="">
+  <!-- <strong>PREVIOUS:</strong>  <br/> -->
+
+  <span>
+  (no title)</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/02/12/AE/"  title="About AE">
+ <!-- <strong>NEXT:</strong> <br/>  -->
+
+ <span>About AE
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+    </div>
+    <footer><div id="footer" >
+  	<div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+	
+	  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+			<li><a href="/categories/Theme/" title="Theme">Theme<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+  
+
+	
+	  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/AE/" title="AE">AE<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Code/" title="Code">Code<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+		
+			<li><a href="/tags/MAC/" title="MAC">MAC<sup>1</sup></a></li>
+		
+			<li><a href="/tags/MarkDown/" title="MarkDown">MarkDown<sup>1</sup></a></li>
+		
+			<li><a href="/tags/WordPress/" title="WordPress">WordPress<sup>1</sup></a></li>
+		
+			<li><a href="/tags/gulp/" title="gulp">gulp<sup>1</sup></a></li>
+		
+			<li><a href="/tags/window/" title="window">window<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+  
+
+	
+
+</aside>
+</div>
+
+	
+	<!-- <div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div> -->
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">  © 2015 
+		
+		<a href="http://joeygoo.github.io" target="_blank" title="JoeyGoo">JoeyGoo</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>
