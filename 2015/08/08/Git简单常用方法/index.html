@@ -1093,8 +1093,8 @@ Git简单常用方法
       <a href="http://joeygoo.github.io" title="JoeyGoo">JoeyGoo</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-08-08T15:05:27.000Z" itemprop="datePublished">2015-08-08</time>
-    Updated:<time datetime="2015-08-08T15:05:27.000Z" itemprop="dateModified">2015-08-08</time>
+    <time datetime="2015-08-08T15:08:56.000Z" itemprop="datePublished">2015-08-08</time>
+    Updated:<time datetime="2015-08-08T15:08:56.000Z" itemprop="dateModified">2015-08-08</time>
     
   </p>
 </header>
@@ -1103,7 +1103,7 @@ Git简单常用方法
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#_1"><span class="toc-number">1.</span> <span class="toc-text">新开的项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#_2"><span class="toc-number">2.</span> <span class="toc-text">已有项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#_3"><span class="toc-number">3.</span> <span class="toc-text">修改远程已有项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#merge"><span class="toc-number">4.</span> <span class="toc-text">本地merge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#_4"><span class="toc-number">5.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#_5"><span class="toc-number">6.</span> <span class="toc-text">误入歧途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#_6"><span class="toc-number">7.</span> <span class="toc-text">未完..</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#_1"><span class="toc-number">1.</span> <span class="toc-text">新开的项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#_2"><span class="toc-number">2.</span> <span class="toc-text">已有项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#_3"><span class="toc-number">3.</span> <span class="toc-text">修改远程已有项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#_5"><span class="toc-number">4.</span> <span class="toc-text">误入歧途</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#_6"><span class="toc-number"></span> <span class="toc-text">未完..</span></a>
 		</div>
 		
 		<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="categories" content="[]">
@@ -2127,103 +2127,47 @@ body .markdown-body
 }
 </style><title>Git简单常用方法</title></head><body><article class="markdown-body"><hr>
 <p>记录下git常用的方法<a id="more"></a></p>
-<h2 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>新开的项目</h2>
-<pre><code>1. $ mkdir git
+<h3 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>新开的项目</h3>
+<pre><code>$ mkdir git
 
-2. $ cd git
+$ cd git
 
-3. $ git init
+$ git init
 
-4. $ touch README.md
+$ touch README.md
 
-5. $ git add README.md
+$ git add README.md
 
-6. $ git commit -m &quot;log message&quot;
+$ git commit -m &quot;log message&quot;
 
-7. $ git remote add origin [name].git
+$ git remote add origin [name].git
 
-8. $ git push -u origin master
+$ git push -u origin master
 </code></pre>
 
-<h2 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>已有项目</h2>
-<ol>
-<li>
-<p>$ cd git</p>
-</li>
-<li>
-<p>$ git remote add origin [name].git</p>
-</li>
-<li>
-<p>$ git push -u origin master</p>
-</li>
-<li>
-<p>$ touch README.md</p>
-</li>
-<li>
-<p>$ git add README.md</p>
-</li>
-<li>
-<p>$ git commit -m &ldquo;log message&rdquo;</p>
-</li>
-<li>
-<p>$ git remote add origin [name.git]</p>
-</li>
-<li>
-<p>$ git push -u origin master</p>
-</li>
-</ol>
-<h2 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>修改远程已有项目</h2>
-<ol>
-<li>
-<p>$ git clone  [name].git</p>
-</li>
-<li>
-<p>$ cd git</p>
-</li>
-<li>
-<p>$ git branch</p>
-</li>
-<li>
-<p>$ git branch yourBranch</p>
-</li>
-<li>
-<p>$ git checkout yourBranch</p>
-</li>
-<li>
-<p>coding &hellip;</p>
-</li>
-<li>
-<p>$ git commit</p>
-</li>
-<li>
-<p>$ git add -A(or your file&rsquo;s name)</p>
-</li>
-<li>
-<p>$ git commit -m your message or git commit</p>
-</li>
-<li>
-<p>$ git push</p>
-</li>
-</ol>
-<h2 id="merge"><a name="user-content-merge" href="#merge" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>本地merge</h2>
-<ol>
-<li>
-<p>$ git checkout master</p>
-</li>
-<li>
+<h3 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>已有项目</h3>
+<p>
+
+<figure class="highlight `<br"><figcaption><span>/></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ cd git<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>$ git remote add origin [name].git<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>$ git push -u origin master<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>$ touch README.md<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>$ git add README.md<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>$ git commit -m &ldquo;log message&rdquo;<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>$ git remote add origin [name.git]<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>$ git push -u origin master<span class="tag">&lt;<span class="title">br</span> /&gt;</span></div></pre></td></tr></table></figure>
+
+</p>
+<h3 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>修改远程已有项目</h3>
+<p>
+
+<figure class="highlight <br"><figcaption><span>/></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ git clone  [name].git<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>$ cd git<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>$ git branch<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>$ git branch yourBranch<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>$ git checkout yourBranch<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>coding &hellip;<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>$ git commit<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>$ git add -A(or your file&rsquo;s name)<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>$ git commit -m your message or git commit<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>$ git push<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">h3</span> <span class="attribute">id</span>=<span class="value">"merge"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">name</span>=<span class="value">"user-content-merge"</span> <span class="attribute">href</span>=<span class="value">"#merge"</span> <span class="attribute">class</span>=<span class="value">"headeranchor-link"</span> <span class="attribute">aria-hidden</span>=<span class="value">"true"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"headeranchor"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>本地merge<span class="tag">&lt;/<span class="title">h3</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<br>
+$ git checkout master</p>
 <p>$ git merge yourBranch</p>
-</li>
-<li>
-<p>$ git push</p>
-</li>
-</ol>
-<h2 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>其他</h2>
-<ul>
-<li>$ git pull 更新本地代码 </li>
-<li>$ git remote rm [name].git  删除remote</li>
-<li>$ git remote set-url &ndash;push [name] [newUrl] 更新remote</li>
-</ul>
-<h2 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>误入歧途</h2>
+<p>$ git push<br>
+
+<figure class="highlight </p>"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">h3</span> <span class="attribute">id</span>=<span class="value">"_4"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">name</span>=<span class="value">"user-content-_4"</span> <span class="attribute">href</span>=<span class="value">"#_4"</span> <span class="attribute">class</span>=<span class="value">"headeranchor-link"</span> <span class="attribute">aria-hidden</span>=<span class="value">"true"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"headeranchor"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>其他<span class="tag">&lt;/<span class="title">h3</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<br>
+$ git pull 更新本地代码 <br>
+$ git remote rm [name].git  删除remote<br>
+$ git remote set-url &ndash;push [name] [newUrl] 更新remote</p>
+<h3 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>误入歧途</h3>
 <ol>
 <li>[modified content] 当拷贝整个文件夹时，提交时出现 [modified content]时，文件夹无法add到commit资源中，这是因为拷贝整个文件夹时，把.git文件都拷过去了，这样就会出现原有项目有.git，而我们拷贝的文件夹里也有.git导致传不上去，所以建议 不要直接拷贝整个文件夹(含.git)，而是新建一个文件夹，然后再把内容拷贝过去。-&gt;<a href="https://superuser.com/questions/583673/cant-add-folder-in-git" target="_blank" rel="external">相关文章</a></li>
 </ol>
