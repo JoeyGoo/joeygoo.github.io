@@ -1919,6 +1919,8 @@ footer {
   color: #c5c8c6;
   line-height: 1.5;
   font-size: 100%;
+  color: #66676b;
+  background: #faf8f8;
 }
 .article-content .highlight .gutter pre,
 .article-content .gist .gist-file .gist-data .line-numbers {
