@@ -620,7 +620,7 @@ header nav ul li a:hover {
   background: #fff;
 /*outline 1px solid gray*/
   margin-bottom: 0.125em;
-  width: 47%;
+  width: 49%;
 /* float: left; */
   display: inline-block;
 }
@@ -684,15 +684,12 @@ header nav ul li a:hover {
 }
 #page-nav .prev {
   float: left;
-  border-left: 0.5em solid #ccc;
+/*border-left 0.5em solid color-gray*/
   -webkit-transition: border-left 0.5s;
   -moz-transition: border-left 0.5s;
   -o-transition: border-left 0.5s;
   -ms-transition: border-left 0.5s;
   transition: border-left 0.5s;
-}
-#page-nav .prev:hover {
-  border-left: 0.5em solid #171f26;
 }
 #page-nav .next {
   float: right;
