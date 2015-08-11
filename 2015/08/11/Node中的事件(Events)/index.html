@@ -69,7 +69,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/08/11/每天写点Node(1)/" title="Node中的事件(Events)" itemprop="url">Node中的事件(Events)</a>
+      <a href="/2015/08/11/Node中的事件(Events)/" title="Node中的事件(Events)" itemprop="url">Node中的事件(Events)</a>
   </h1>
   <p class="article-author">By
     
@@ -77,7 +77,7 @@
     </p>
   <p class="article-time">
     <time datetime="2015-08-11T14:25:24.000Z" itemprop="datePublished">2015-08-11</time>
-    Updated:<time datetime="2015-08-11T14:25:10.000Z" itemprop="dateModified">2015-08-11</time>
+    Updated:<time datetime="2015-08-11T14:27:59.000Z" itemprop="dateModified">2015-08-11</time>
     
   </p>
 </header>
@@ -96,14 +96,16 @@
 
 <h3 id="使用EventEmitter方式">使用EventEmitter方式</h3>
 <h4 id="直接实例化获取EventEmitter">直接实例化获取EventEmitter</h4>
-<figure class="highlight JavaScript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">'events'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 通过实例化EventEmitter</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> emitter = <span class="keyword">new</span> events.EventEmitter();</div><div class="line"></div><div class="line"><span class="comment">// 可以绑定多个同名事件，触发时会顺序触发</span></div><div class="line">emitter.on(<span class="string">'love'</span>, <span class="function"><span class="keyword">function</span><span class="params">(someone)</span></span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name,<span class="string">"爱"</span>, someone)</div><div class="line">})</div><div class="line">emitter.on(<span class="string">'love'</span>, <span class="function"><span class="keyword">function</span><span class="params">(someone)</span></span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name,<span class="string">"爱"</span>, someone)</div><div class="line">})</div><div class="line"></div><div class="line">emitter.emit(<span class="string">'love'</span>, <span class="string">'jerry'</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight JavaScript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">'events'</span>);</div><div class="line"><span class="comment">// 通过实例化EventEmitter</span></div><div class="line"><span class="keyword">var</span> emitter = <span class="keyword">new</span> events.EventEmitter();</div><div class="line"><span class="comment">// 可以绑定多个同名事件，触发时会顺序触发</span></div><div class="line">emitter.on(<span class="string">'love'</span>, <span class="function"><span class="keyword">function</span><span class="params">(someone)</span></span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name,<span class="string">"爱"</span>, someone)</div><div class="line">})</div><div class="line">emitter.on(<span class="string">'love'</span>, <span class="function"><span class="keyword">function</span><span class="params">(someone)</span></span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name,<span class="string">"爱"</span>, someone)</div><div class="line">})</div><div class="line">emitter.emit(<span class="string">'love'</span>, <span class="string">'jerry'</span>);</div></pre></td></tr></table></figure>
 
 
 
 <h4 id="通过继承来获取事件对象的方法">通过继承来获取事件对象的方法</h4>
-<figure class="highlight JavaScript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> util = <span class="built_in">require</span>(<span class="string">'util'</span>);</div><div class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">'events'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> Cat = <span class="function"><span class="keyword">function</span> <span class="params">(name)</span> </span>{</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">}</div><div class="line"></div><div class="line">util.inherits(Cat, events.EventEmitter);</div><div class="line"></div><div class="line"><span class="keyword">var</span> Tom = <span class="keyword">new</span> Cat(<span class="string">'Tom'</span>);</div><div class="line"></div><div class="line">Tom.on(<span class="string">'love'</span>, <span class="function"><span class="keyword">function</span><span class="params">(someone)</span></span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name,<span class="string">"爱"</span>, someone)</div><div class="line">})</div><div class="line"></div><div class="line">Tom.emit(<span class="string">'love'</span>, <span class="string">'jerry'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight JavaScript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> util = <span class="built_in">require</span>(<span class="string">'util'</span>);</div><div class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">'events'</span>);</div><div class="line"><span class="keyword">var</span> Cat = <span class="function"><span class="keyword">function</span> <span class="params">(name)</span> </span>{</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">}</div><div class="line">util.inherits(Cat, events.EventEmitter);</div><div class="line"><span class="keyword">var</span> Tom = <span class="keyword">new</span> Cat(<span class="string">'Tom'</span>);</div><div class="line">Tom.on(<span class="string">'love'</span>, <span class="function"><span class="keyword">function</span><span class="params">(someone)</span></span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name,<span class="string">"爱"</span>, someone)</div><div class="line">})</div><div class="line">Tom.emit(<span class="string">'love'</span>, <span class="string">'jerry'</span>)</div></pre></td></tr></table></figure>
 
 
+
+<p>相关内容：<a href="http://nodeapi.ucdok.com/api/events.html#events_emitter_once_event_listener_1159" target="_blank" rel="external">http://nodeapi.ucdok.com/api/events.html#events_emitter_once_event_listener_1159</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -118,7 +120,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://joeygoo.github.io/2015/08/11/每天写点Node(1)/" data-title="Node中的事件(Events) | JoeyGoo" data-tsina="null" class="share clearfix">
+  <div data-url="http://joeygoo.github.io/2015/08/11/Node中的事件(Events)/" data-title="Node中的事件(Events) | JoeyGoo" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
