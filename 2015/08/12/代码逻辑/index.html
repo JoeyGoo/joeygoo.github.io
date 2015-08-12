@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Node中的事件(Events) | JoeyGoo</title>
+    <title>代码逻辑规范 | JoeyGoo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="JoeyGoo">
     
-    <meta name="description" content="每天学点Node(1)">
+    <meta name="description" content="代码书写逻辑及规范..">
     
     
     
@@ -69,15 +69,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/08/11/Node中的事件(Events)/" title="Node中的事件(Events)" itemprop="url">Node中的事件(Events)</a>
+      <a href="/2015/08/12/代码逻辑/" title="代码逻辑规范" itemprop="url">代码逻辑规范</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://joeygoo.github.io" title="JoeyGoo">JoeyGoo</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-08-11T14:25:24.000Z" itemprop="datePublished">2015-08-11</time>
-    Updated:<time datetime="2015-08-11T14:27:59.000Z" itemprop="dateModified">2015-08-11</time>
+    <time datetime="2015-08-12T14:19:24.000Z" itemprop="datePublished">2015-08-12</time>
+    Updated:<time datetime="2015-08-12T14:21:05.000Z" itemprop="dateModified">2015-08-12</time>
     
   </p>
 </header>
@@ -86,33 +86,33 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单介绍"><span class="toc-number">1.</span> <span class="toc-text">简单介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用EventEmitter方式"><span class="toc-number">2.</span> <span class="toc-text">使用EventEmitter方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#直接实例化获取EventEmitter"><span class="toc-number">2.1.</span> <span class="toc-text">直接实例化获取EventEmitter</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过继承来获取事件对象的方法"><span class="toc-number">2.2.</span> <span class="toc-text">通过继承来获取事件对象的方法</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码逻辑规范_-_不断完善"><span class="toc-number">1.</span> <span class="toc-text">代码逻辑规范 - 不断完善</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用switch语句减少if-else"><span class="toc-number">1.1.</span> <span class="toc-text">使用switch语句减少if-else</span></a></li></ol></li></ol>
 		</div>
 		
-		<p>每天学点Node(1)<a id="more"></a></p>
-<h3 id="简单介绍">简单介绍</h3>
-<p>EventEmitter使得node走观察者模式，主要通过on和emit这些方法来构成。也有更为具体的方法。如emitter.once(event, listener)添加一次性 listener，这个 listener 只会被触发一次，触发完成后就被删除。<br>主要有以下方法</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">事件 (Events)</div><div class="line">类: events.EventEmitter</div><div class="line"><span class="keyword">emitter</span>.addListener(<span class="keyword">event</span>, listener)</div><div class="line"><span class="keyword">emitter</span>.on(<span class="keyword">event</span>, listener)</div><div class="line"><span class="keyword">emitter</span>.once(<span class="keyword">event</span>, listener)</div><div class="line"><span class="keyword">emitter</span>.removeListener(<span class="keyword">event</span>, listener)</div><div class="line"><span class="keyword">emitter</span>.removeAllListeners([<span class="keyword">event</span>])</div><div class="line"><span class="keyword">emitter</span>.setMaxListeners(n)</div><div class="line">EventEmitter.defaultMaxListeners</div><div class="line"><span class="keyword">emitter</span>.listeners(<span class="keyword">event</span>)</div><div class="line"><span class="keyword">emitter</span>.<span class="keyword">emit</span>(<span class="keyword">event</span>, [arg1], [arg2], [...])</div><div class="line">类方法: EventEmitter.listenerCount(<span class="keyword">emitter</span>, <span class="keyword">event</span>)</div><div class="line">事件: <span class="string">'newListener'</span></div><div class="line">事件: <span class="string">'removeListener'</span></div></pre></td></tr></table></figure>
-
-<h3 id="使用EventEmitter方式">使用EventEmitter方式</h3>
-<h4 id="直接实例化获取EventEmitter">直接实例化获取EventEmitter</h4>
-<figure class="highlight JavaScript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">'events'</span>);</div><div class="line"><span class="comment">// 通过实例化EventEmitter</span></div><div class="line"><span class="keyword">var</span> emitter = <span class="keyword">new</span> events.EventEmitter();</div><div class="line"><span class="comment">// 可以绑定多个同名事件，触发时会顺序触发</span></div><div class="line">emitter.on(<span class="string">'love'</span>, <span class="function"><span class="keyword">function</span><span class="params">(someone)</span></span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name,<span class="string">"爱"</span>, someone)</div><div class="line">})</div><div class="line">emitter.on(<span class="string">'love'</span>, <span class="function"><span class="keyword">function</span><span class="params">(someone)</span></span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name,<span class="string">"爱"</span>, someone)</div><div class="line">})</div><div class="line">emitter.emit(<span class="string">'love'</span>, <span class="string">'jerry'</span>);</div></pre></td></tr></table></figure>
-
-
-
-<h4 id="通过继承来获取事件对象的方法">通过继承来获取事件对象的方法</h4>
-<figure class="highlight JavaScript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> util = <span class="built_in">require</span>(<span class="string">'util'</span>);</div><div class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">'events'</span>);</div><div class="line"><span class="keyword">var</span> Cat = <span class="function"><span class="keyword">function</span> <span class="params">(name)</span> </span>{</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">}</div><div class="line">util.inherits(Cat, events.EventEmitter);</div><div class="line"><span class="keyword">var</span> Tom = <span class="keyword">new</span> Cat(<span class="string">'Tom'</span>);</div><div class="line">Tom.on(<span class="string">'love'</span>, <span class="function"><span class="keyword">function</span><span class="params">(someone)</span></span>{</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name,<span class="string">"爱"</span>, someone)</div><div class="line">})</div><div class="line">Tom.emit(<span class="string">'love'</span>, <span class="string">'jerry'</span>)</div></pre></td></tr></table></figure>
+		<p>代码书写逻辑及规范..<a id="more"></a></p>
+<h3 id="代码逻辑规范_-_不断完善">代码逻辑规范 - 不断完善</h3>
+<ul>
+<li>分离逻辑</li>
+<li>函数所依赖的外部变量，以传参的形式传入函数内</li>
+<li>变量语义化 var a = [‘向上’, ‘向下’]; -&gt; var direction = {‘up’: ‘向上’, ‘down’: ‘向下’};</li>
+<li>可以公用的函数要抽取处理，如cgi获得数据</li>
+<li>有的只是为了提供数据，有的不是。</li>
+</ul>
+<figure class="highlight JavaScript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLocation</span><span class="params">(params, cb)</span></span>{</div><div class="line">    <span class="comment">// cgi 请求</span></div><div class="line">    url:<span class="string">'...'</span>,</div><div class="line">    data:[...],</div><div class="line">    success: <span class="function"><span class="keyword">function</span><span class="params">(data)</span></span>{</div><div class="line">        cb(data);<span class="comment">// 将结果传入回调函数</span></div><div class="line">    },</div><div class="line">    err: <span class="function"><span class="keyword">function</span><span class="params">(data)</span></span>{</div><div class="line">        <span class="comment">// do something ..</span></div><div class="line">    }</div><div class="line">}</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">handlerFn</span><span class="params">(data)</span></span>{</div><div class="line">    <span class="comment">// body ..</span></div><div class="line">    <span class="comment">// 对cgi返回的数据进行处理</span></div><div class="line">}</div><div class="line">getLocation(<span class="string">'someParams'</span>, handlerFn);</div></pre></td></tr></table></figure>
 
 
 
-<p>相关内容：<a href="http://nodeapi.ucdok.com/api/events.html#events_emitter_once_event_listener_1159" target="_blank" rel="external">http://nodeapi.ucdok.com/api/events.html#events_emitter_once_event_listener_1159</a></p>
+<h4 id="使用switch语句减少if-else">使用switch语句减少if-else</h4>
+<figure class="highlight JavaScript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">switch</span>(identity)</div><div class="line">{</div><div class="line"><span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">    <span class="comment">// do something ..</span></div><div class="line">    <span class="keyword">break</span>;</div><div class="line"><span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">    <span class="comment">// do something ..</span></div><div class="line">    <span class="keyword">break</span>;</div><div class="line"><span class="keyword">default</span>:</div><div class="line">    <span class="comment">// if n !== 0 && n !== 0 </span></div><div class="line">    <span class="comment">// do something ..</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/NodeJs/">NodeJs</a>
+  <span></span> <a href="/tags/Code/">Code</a>
   </div>
 
 
@@ -120,7 +120,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://joeygoo.github.io/2015/08/11/Node中的事件(Events)/" data-title="Node中的事件(Events) | JoeyGoo" data-tsina="null" class="share clearfix">
+  <div data-url="http://joeygoo.github.io/2015/08/12/代码逻辑/" data-title="代码逻辑规范 | JoeyGoo" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -129,21 +129,12 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/08/12/代码逻辑/" title="代码逻辑规范">
-  <!-- <strong>PREVIOUS:</strong>  <br/> -->
-
-  <span>
-  代码逻辑规范</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/08/09/【译】WebWorker到底有多快/"  title="【译】WebWorker到底有多快">
+<a href="/2015/08/11/Node中的事件(Events)/"  title="Node中的事件(Events)">
  <!-- <strong>NEXT:</strong> <br/>  -->
 
- <span>【译】WebWorker到底有多快
+ <span>Node中的事件(Events)
 </span>
 </a>
 </div>
