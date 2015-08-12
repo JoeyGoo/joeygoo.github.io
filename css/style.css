@@ -113,8 +113,8 @@ a img {
 body {
   background: #fff;
   font-family: "Helvetica Neue", "Helvetica", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, sans-serif;
-  font-size: 100%;
-  color: #817c7c;
+  font-size: 95%;
+  color: #333;
   line-height: 1.5;
 }
 small {
@@ -136,7 +136,7 @@ sub {
 }
 a {
   text-decoration: none;
-  color: #817c7c;
+  color: #333;
 }
 a:hover,
 a:focus {
@@ -441,7 +441,7 @@ body >header .header-title {
 }
 @media only screen and (min-width: 768px) {
   #textlogo h1.site-name {
-    font-size: 240%;
+    font-size: 235%;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -455,12 +455,12 @@ body >header .header-title {
 }
 @media only screen and (min-width: 768px) {
   #textlogo h2.blog-motto {
-    font-size: 100%;
+    font-size: 95%;
   }
 }
 @media only screen and (min-width: 1024px) {
   #textlogo h2.blog-motto {
-    font-size: 110%;
+    font-size: 105%;
   }
 }
 .navbar {
@@ -487,7 +487,7 @@ body >header .header-title {
 header nav {
   float: left;
   width: 100%;
-  font-size: 112.5%;
+  font-size: 107.5%;
   padding-top: 0.5em;
   max-height: 0.01em;
   -webkit-transition: max-height 1s ease-out;
@@ -654,10 +654,10 @@ header nav ul li a:hover {
   left: -30px;
 }
 #main section.post a p {
-  color: #817c7c;
+  color: #333;
 }
 #main section.post a time {
-  color: #817c7c;
+  color: #333;
   display: block;
   margin: 0.5em 0;
   font-size: 0.5em;
@@ -723,7 +723,7 @@ header nav ul li a:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #ccc;
-  font-size: 100%;
+  font-size: 95%;
   padding-right: 0.3em;
 }
 .category-icon:before {
@@ -753,7 +753,7 @@ header nav ul li a:hover {
 .archive-title h2 {
   width: 90%;
   color: #0e83cd;
-  font-size: 120%;
+  font-size: 115%;
 }
 .archive-title a {
   color: #0e83cd;
@@ -830,7 +830,7 @@ header nav ul li a:hover {
 }
 article header.article-info >h1 {
   padding: 0.2em 3%;
-  font-size: 170%;
+  font-size: 165%;
   line-height: 1.5;
   word-wrap: break-word;
   word-break: normal;
@@ -840,7 +840,7 @@ article header.article-info >h1 {
 }
 @media only screen and (min-width: 1024px) {
   article header.article-info >h1 {
-    font-size: 200%;
+    font-size: 195%;
     padding-top: 0.3em;
   }
 }
@@ -870,7 +870,7 @@ article header.article-info >p.article-time {
 }
 article header.article-info >p.article-time:before {
   font-family: "FontAwesome";
-  font-size: 130%;
+  font-size: 125%;
   content: "\f017";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -896,14 +896,14 @@ article .article-content .kb {
 }
 article .article-content h1,
 article .article-content h2 {
-  font-size: 180%;
+  font-size: 175%;
   line-height: 1.2em;
 }
 article .article-content h3,
 article .article-content h4,
 article .article-content h5,
 article .article-content h6 {
-  font-size: 140%;
+  font-size: 135%;
 }
 article .article-content h1,
 article .article-content h2,
@@ -943,7 +943,7 @@ article .article-content blockquote {
   margin: 0.65em 0 0.65em 4%;
   padding-left: 1%;
   line-height: 1.5;
-  font-size: 110%;
+  font-size: 105%;
 }
 article .article-content blockquote footer {
   background: #fff;
@@ -959,7 +959,7 @@ article .article-content blockquote cite {
 article .article-content ul,
 article .article-content ol {
   padding-left: 2em;
-  font-size: 105%;
+  font-size: 100%;
 }
 @media only screen and (min-width: 768px) {
   article .article-content ul,
@@ -986,7 +986,7 @@ article .article-content strong code,
 article .article-content em code {
   font-family: Monaco, Menlo, Consolas, Courier New, monospace;
   background: #eee;
-  color: #747070;
+  color: #2e2e2e;
   border: 1px solid #d6d6d6;
   padding: 0 5px;
   margin: 0 2px;
@@ -995,7 +995,7 @@ article .article-content em code {
   text-shadow: 0 1px #fff;
 }
 article .article-content p {
-  font-size: 105%;
+  font-size: 100%;
   line-height: 1.7;
   margin: 0.7em 0;
 }
@@ -1124,10 +1124,10 @@ footer.article-footer {
   position: relative;
 }
 .share a:before {
-  font-size: 100%;
+  font-size: 95%;
   font-family: "FontAwesome";
   text-align: center;
-  color: #817c7c;
+  color: #333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 1.5em;
@@ -1429,7 +1429,7 @@ section.comment {
 }
 #toc.toc-aside strong {
   padding: 0.3em 0;
-  color: #817c7c;
+  color: #333;
 }
 #toc.toc-aside:hover {
   -webkit-transition: opacity 0.3s ease-out;
@@ -1816,7 +1816,7 @@ footer {
   font-family: "covered_by_your_graceregular";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 150%;
+  font-size: 145%;
   line-height: 1.3em;
   width: 90%;
   margin: 0 auto;
@@ -1853,7 +1853,7 @@ footer {
   display: block;
   width: 14%;
   color: rgba(255,255,255,0.8);
-  font-size: 180%;
+  font-size: 175%;
   padding: 0.5em;
 }
 @media only screen and (min-width: 1024px) {
@@ -1915,8 +1915,8 @@ footer {
   overflow: auto;
   color: #c5c8c6;
   line-height: 1.5;
-  font-size: 100%;
-  color: #66676b;
+  font-size: 95%;
+  color: #333;
   background: #faf8f8;
 }
 .article-content .highlight .gutter pre,
@@ -1924,7 +1924,7 @@ footer {
   color: #666;
   font-size: 0.85em;
   line-height: 1.5;
-  font-size: 100%;
+  font-size: 95%;
 }
 .article-content pre {
   font-family: Monaco, Menlo, Consolas, Courier New, monospace;
@@ -2037,7 +2037,7 @@ pre .built_in,
 pre .literal,
 pre .params,
 pre .constant {
-  color: #de935f;
+  color: #333;
 }
 pre .class .title,
 pre .rules .attribute {
@@ -2049,7 +2049,7 @@ pre .inheritance,
 pre .header,
 pre .symbol,
 pre .cdata {
-  color: #b5bd68;
+  color: #0086b3;
 }
 pre .css .hexcolor {
   color: #8abeb7;
@@ -2066,7 +2066,7 @@ pre .coffeescript .title {
 }
 pre .keyword,
 pre .javascript .function {
-  color: #b294bb;
+  color: #a71d5d;
 }
 pre .coffeescript .javascript,
 pre .javascript .xml,
@@ -2148,14 +2148,14 @@ pre .xml .cdata {
   padding-bottom: 1em !important;
 }
 textarea {
-  color: #817c7c !important;
+  color: #333 !important;
   background: rgba(255,255,255,0.8) !important;
 }
 textarea::-webkit-input-placeholder {
-  color: #817c7c !important;
+  color: #333 !important;
 }
 textarea::-moz-placeholder {
-  color: #817c7c !important;
+  color: #333 !important;
 }
 .article-gallery {
   background: #fff;
