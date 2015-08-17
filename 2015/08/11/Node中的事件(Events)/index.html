@@ -79,7 +79,7 @@
     </p>
   <p class="article-time">
     <time datetime="2015-08-11T14:25:24.000Z" itemprop="datePublished">2015-08-11</time>
-    Updated:<time datetime="2015-08-11T14:27:59.000Z" itemprop="dateModified">2015-08-11</time>
+    Updated:<time datetime="2015-08-16T15:08:09.000Z" itemprop="dateModified">2015-08-16</time>
     
   </p>
 </header>
@@ -93,7 +93,7 @@
 		
 		<p>每天学点Node(1)<a id="more"></a></p>
 <h3 id="简单介绍">简单介绍</h3>
-<p>EventEmitter使得node走观察者模式，主要通过on和emit这些方法来构成。也有更为具体的方法。如emitter.once(event, listener)添加一次性 listener，这个 listener 只会被触发一次，触发完成后就被删除。<br>主要有以下方法</p>
+<p>EventEmitter使得node走观察者模式，主要通过on和emit这些方法来构成。也有更为具体的方法。如emitter.once(event,listener)添加一次性 listener，这个 listener 只会被触发一次，触发完成后就被删除。<br>主要有以下方法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">事件 (Events)</div><div class="line">类: events.EventEmitter</div><div class="line"><span class="keyword">emitter</span>.addListener(<span class="keyword">event</span>, listener)</div><div class="line"><span class="keyword">emitter</span>.on(<span class="keyword">event</span>, listener)</div><div class="line"><span class="keyword">emitter</span>.once(<span class="keyword">event</span>, listener)</div><div class="line"><span class="keyword">emitter</span>.removeListener(<span class="keyword">event</span>, listener)</div><div class="line"><span class="keyword">emitter</span>.removeAllListeners([<span class="keyword">event</span>])</div><div class="line"><span class="keyword">emitter</span>.setMaxListeners(n)</div><div class="line">EventEmitter.defaultMaxListeners</div><div class="line"><span class="keyword">emitter</span>.listeners(<span class="keyword">event</span>)</div><div class="line"><span class="keyword">emitter</span>.<span class="keyword">emit</span>(<span class="keyword">event</span>, [arg1], [arg2], [...])</div><div class="line">类方法: EventEmitter.listenerCount(<span class="keyword">emitter</span>, <span class="keyword">event</span>)</div><div class="line">事件: <span class="string">'newListener'</span></div><div class="line">事件: <span class="string">'removeListener'</span></div></pre></td></tr></table></figure>
 
 <h3 id="使用EventEmitter方式">使用EventEmitter方式</h3>
